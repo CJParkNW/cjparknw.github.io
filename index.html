@@ -190,23 +190,24 @@
 								</div>
 							</article>
 
+                            <!-- Contact -->
+                            <!-- Source: https://github.com/toperkin/staticFormEmails/blob/master/README.md -->
 
-						<!-- Contact -->
 							<article id="contact">
-								<h2 class="major">Contact</h2>
-								<form method="post" action="#">
+								<h2 class="major">Contact</h2>                                      
+								<form name="gform" id="gform" enctype="text/plain" action="https://docs.google.com/forms/d/e/1FAIpQLSfMjXoGoHx0_Cu7KzCw2iy1GS290WVriOsN0DEU5yIoP-7mRw/formResponse?" target="hidden_iframe" onsubmit="submitted=true;">
 									<div class="fields">
 										<div class="field half">
 											<label for="name">Name</label>
-											<input type="text" name="name" id="name" />
+											<input type="text" name="entry.599066046" id="entry.599066046" required/>
 										</div>
 										<div class="field half">
 											<label for="email">Email</label>
-											<input type="text" name="email" id="email" />
+											<input type="text" name="entry.1564971590" id="entry.1564971590" required/>
 										</div>
 										<div class="field">
 											<label for="message">Message</label>
-											<textarea name="message" id="message" rows="4"></textarea>
+											<textarea name="entry.28565407" id="entry.28565407" rows="4" required></textarea>
 										</div>
 									</div>
 									<ul class="actions">
@@ -214,6 +215,7 @@
 										<li><input type="reset" value="Reset" /></li>
 									</ul>
 								</form>
+                                <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {}"></iframe>
 								<ul class="icons">
 									<li><a href="linkedin.com/in/jcathyp" class="icon brands fa-linkedin"><span class="label">Instagram</span></a></li>
 									<li><a href="github.com/CJParkNW" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
@@ -482,6 +484,14 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/photo_grid.js"></script>
 			<script src="assets/js/main.js"></script>
+            <!-- For submission processed -->
+            <script type="text/javascript">var submitted=false;</script>
+            <script type="text/javascript">
+            $('#gform').on('submit', function(e) {
+            $('#gform *').fadeOut(2000);
+            $('#gform').prepend('Your submission has been processed.');
+            });
+            </script>
 
 	</body>
 </html>
